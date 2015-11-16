@@ -22,6 +22,11 @@ class IdeasController < ApplicationController
     @idea = Idea.find params[:id]
     @comment = Comment.new
     @comments = @idea.comments
+    @joins = @idea.joins
+    @members = []
+    @joins.each do |join|
+      @members.push join.user.first_name
+    end
   end
 
   private

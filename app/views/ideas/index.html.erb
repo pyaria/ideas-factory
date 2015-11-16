@@ -4,5 +4,8 @@
   <div>
     <p><b><%= link_to "#{idea.title}", idea_path(idea) %></b></p>
     <p><%= idea.body %></p>
+    <% if current_user != idea.user %>
+      <%= link_to "Join this idea!", idea_joins_path(idea), {method: :post, class: "btn btn-primary"} %>
+    <% end %>
   </div>
 <% end %>
