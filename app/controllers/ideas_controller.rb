@@ -7,10 +7,12 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    
   end
 
   def create
     idea = Idea.new(idea_params)
+    idea.user = current_user
     if idea.save
       redirect_to root_path, notice: "Idea saved!"
     else

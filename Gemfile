@@ -41,6 +41,7 @@ group :development, :test do
   gem 'bootstrap-sass'
   gem 'faker'
   gem 'cancancan', '~>1.10'
+  gem 'jquery-ui-rails'
 end
 
 group :development do

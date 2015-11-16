@@ -1,11 +1,14 @@
 <h1>Everyone's ideas</h1>
 <hr>
 <% @ideas.each do |idea| %>
-  <div>
+  <div class="well">
     <p><b><%= link_to "#{idea.title}", idea_path(idea) %></b></p>
     <p><%= idea.body %></p>
+    <p> By <%= idea.user.first_name %>
     <% if current_user != idea.user %>
       <%= link_to "Join this idea!", idea_joins_path(idea), {method: :post, class: "btn btn-primary"} %>
+      <%= link_to "Like this idea!", idea_likes_path(idea), {method: :post, class: "btn btn-primary"} %>
     <% end %>
+    Members: <%= idea.joins.count %> | Likes: <%= idea.likes.count %></p>
   </div>
 <% end %>

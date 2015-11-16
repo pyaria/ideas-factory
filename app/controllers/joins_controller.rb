@@ -11,9 +11,6 @@ class JoinsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
   def idea
     Idea.find params[:idea_id]

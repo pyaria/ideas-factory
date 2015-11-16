@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :joins, dependent: :destroy
   has_many :joined_ideas, through: :joins, source: :idea
+
+  has_many :likes, dependent: :nullify
+  has_many :liked_ideas, through: :likes, source: :idea
 end
