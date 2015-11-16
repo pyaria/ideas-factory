@@ -3,4 +3,7 @@ class User < ActiveRecord::Base
   attr_accessor :hello
   validates :email, presence: true, uniqueness: true
 
+  has_many :comments, dependent: :nullify
+
+  has_many :ideas, dependent: :nullify
 end
