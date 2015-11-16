@@ -1,14 +1,14 @@
 <h1>What's your idea?</h1>
-<%= form_for @idea do |f| %>
+<%= form_for @idea do |idea| %>
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= idea.label :title %>
+    <%= idea.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: "form-control" %>
+    <%= idea.label :body %>
+    <%= idea.text_area :body, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.submit %>
+    <%= idea.submit %>
   </div>
 <% end %>

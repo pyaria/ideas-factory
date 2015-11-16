@@ -1,0 +1,26 @@
+<h1>Join us!</h1>
+<%= form_for @user do |user| %>
+  <div class="form-group">
+    <%= user.label :first_name %>
+    <%= user.text_field :first_name, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= user.label :last_name %>
+    <%= user.text_field :last_name, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= user.label :email %>
+    <%= user.email_field :email, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= user.label :password %>
+    <%= user.password_field :password, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= user.label :password_confirmation %>
+    <%= user.password_field :password_confirmation, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= user.submit %>
+  </div>
+<% end %>
