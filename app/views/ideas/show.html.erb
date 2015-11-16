@@ -1,7 +1,7 @@
 <h1><%= @idea.title %></h1>
 <p><%= @idea.body %></p>
 <p>Members: <%= @members.join(", ") %>
-
+<%= image_tag @idea.image.url %>
 <hr>
 
 <h3>Leave a comment</h3>

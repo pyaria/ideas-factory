@@ -1,6 +1,6 @@
 
  <h1>What's your idea?</h1>
- <%= form_for @idea do |idea| %>
+<%= form_for @idea, html: { multipart: true } do |idea| %>
    <div class="form-group">
      <%= idea.label :title %>
      <%= idea.text_field :title, class: "form-control" %>
@@ -8,6 +8,9 @@
    <div class="form-group">
      <%= idea.label :body %>
      <%= idea.text_area :body, class: "form-control" %>
+   </div>
+   <div class="form-group">
+     <%= idea.file_field :image %>
    </div>
    <div class="form-group">
      <%= idea.submit %>
