@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  before_action :authenticate_user, except: [:index, :show]
 
   def index
     @ideas = Idea.all
@@ -15,6 +16,10 @@ class IdeasController < ApplicationController
     else
       render :new, alert: "Idea not saved!"
     end
+  end
+
+  def show
+    @idea = Idea.find params[:id]
   end
 
   private

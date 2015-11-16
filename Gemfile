@@ -40,6 +40,7 @@ group :development, :test do
   gem 'interactive_editor'
   gem 'bootstrap-sass'
   gem 'faker'
+  gem 'cancancan', '~>1.10'
 end
 
 group :development do

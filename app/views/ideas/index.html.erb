@@ -2,7 +2,7 @@
 <hr>
 <% @ideas.each do |idea| %>
   <div>
-    <p><b><%= idea.title %></b></p>
+    <p><b><%= link_to "#{idea.title}", idea_path(idea) %></b></p>
     <p><%= idea.body %></p>
   </div>
 <% end %>
