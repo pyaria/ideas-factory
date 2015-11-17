@@ -7,12 +7,11 @@
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
-  <script src="newidea.js"></script>
 </head>
 <body>
   <div class="container-fluid">
     <%= link_to "Home", root_path %> |
-    <%= link_to "New idea", new_idea_path %> ||
+    <%= link_to "New idea", "new_idea_path" %> ||
     <% if user_signed_in? %>
       Welcome <%= current_user.first_name %>! |
       <%= link_to "Sign out", session_path(:user_id), {method: :delete, data: {confirm: "Are you sure?"}} %>
@@ -20,15 +19,15 @@
       <%= link_to "Join us", new_user_path %> |
       <%= link_to "Sign in", new_session_path %>
     <% end %>
+
   </div>
+
   <div class="container-fluid">
     <%= render "/layouts/flash_messages" %>
   </div>
   <div class="container-fluid">
 
     <%= yield %>
-  </div>
+
 </body>
-
-
 </html>
